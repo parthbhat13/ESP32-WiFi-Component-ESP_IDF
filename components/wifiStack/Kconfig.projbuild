@@ -1,0 +1,91 @@
+menu "WiFi Stack Configuration"
+
+    config AP_SSID
+        string "AccessPoint SSID"
+        default "RAiMECH Aero E32"
+        help
+            SSID (Network Name) for AccessPoint for other devices to connect to the esp32.
+            Make sure to Pass NULL, for ssid and password in the function of startWifiAccessPoint, if want to use the configMenu Defination
+
+
+    config AP_PASSWORD
+        string "AccessPoint Password"
+        default "raimech123"
+        help
+            Password for AccessPoint, Minimum 8 characters long
+            Make sure to Pass NULL, for ssid and password in the function of startWifiAccessPoint, if want to use the configMenu Defination
+
+    config AP_MAX_CONNECTIONS
+        int "Max Connections"
+        range 1 5
+        default 2
+        help
+            The Maximum Number Of devices which can connect to the ESP32
+
+    config STA_SSID
+        string "Station SSID"
+        default "RAiMECH Aero E32"
+        help
+            SSID to connect to the wifi router
+            Make sure to Pass NULL, for ssid and password in the function of startWifiStation, if want to use the configMenu Defination
+
+    config STA_PASSWORD
+        string "Station Passowrd"
+        default "raimech123"
+        help
+            Password to connect to the wifi router
+            Make sure to Pass NULL, for ssid and password in the function of startWifiStation, if want to use the configMenu Defination
+
+    config STA_MAX_RETRY_COUNTS
+        int "Max Retry Counts"
+        range 1 50
+        default 10
+        help
+            Maximum number of attempts the esp32 will take to connect to the WiFi router
+
+    config STA_INFINIT_RETRY
+        bool "Infinite Retry"
+        default 0
+        help
+            If set to y, the esp32 will try to connect to the WiFi router infinitely, until it connects
+            If set to n, the esp32 will try to connect to the WiFi router for the number of times specified in the STA_MAX_RETRY_COUNTS
+
+
+    config STA_CONNECTED_CB
+        bool "Station Connected CB"
+        default 0
+        help
+            Allow usage of callback after the Station is connected 
+
+    config STA_DISCONNECTED_CB
+        bool "Station Disconnected CB"
+        default 0
+        help
+            Allow usage of callback after the station is disconnected
+
+    config STA_RECONNECTING_CB
+        bool "Station Reconnecting CB"
+        default 0
+        help
+            Allow usage of callback if station is reconnecting
+    
+    config GOT_IP_CB
+        bool "Got IP CB"
+        default 0
+        help
+            Allow usage of callback after station receives Ip address
+
+    config AP_CONNECTED_CB
+        bool "AccessPoint Connected CB"
+        default 0
+        help
+            Allow usage of callback after device gets connected to access point
+
+    config AP_DISCONNECTED_CB
+        bool "AccessPoint Disconnected CB"
+        default 0
+        help
+            Allow usage of callback after devices get disconnected from access point
+
+
+endmenu
