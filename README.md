@@ -254,5 +254,7 @@ In terms of bugs all I can think of the following for now.
 1. Better ways to implement callbacks 
 2. Make the callbacks non-Blocking 
 
-Cheers! if you guys like this repo, do let me know, and feel free to push new changes.
+Cheers!
+Thanks to <https://github.com/diplfranzhoepfinger> for helping me with callbacks.
+if you guys like this repo, do let me know, and feel free to push new changes.
 **Parth Yatin Temkar :)**
